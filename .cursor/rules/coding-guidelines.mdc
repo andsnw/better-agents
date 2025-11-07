@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+---
+
+Guiding principles:
+- Clean Code
+- SRP
+- YAGNI
+- KISS
+
+DIRECTIVES:
+- We want thin files that aim to have a single responsibility and a single export.
+- We should have a single export per file.
+- Files should be organized/grouped by feature
+- Code should be modular
+- Functions should be small
+- Classes should be small
+- functions, classes, methods should have TSDoc with example usage
