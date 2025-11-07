@@ -1,16 +1,37 @@
-# Superagents by LangWatch
+# Superagents
 
-A CLI for creating production-ready AI agent projects with best practices baked in.
+Superagents is a CLI tool and standards to supercharge your coding assistant (Claude Code, Cursor, etc) to be expert in building with your agent framework of choise (Agno, Mastra, etc) and structure your project with scenarios agent testing, evaluation notebooks, versioned prompts and observability instrumentation.
 
-## What is Superagents?
+Superagents allow you to create agents with best practices baked in and ready for production.
 
-Superagents helps you kickstart agent projects with the right structure, tooling, and best practices from day one. It sets up your project with:
+### The Superagent Structure
 
-- **Agent Testing Pyramid** methodology
-- **LangWatch** integration for prompt management, testing, and evaluation
-- **Framework-specific** configurations (Agno, Mastra)
-- **Auto-launched coding assistant** (Claude Code, Cursor CLI, or Kilocode CLI) pre-configured as an expert in your chosen framework
-- **Production-ready** project structure
+```
+my-agent-project/
+├── app/ (or src/)           # The actual agent code, structured according to the chosen framework
+├── tests/
+│   ├── evaluations/         # Jupyter notebooks for evaluations
+│   │   └── example_eval.ipynb
+│   └── scenarios/           # End-to-end scenario tests
+│       └── example_scenario.test.{py,ts}
+├── prompts/                 # Versioned prompt files for team collaboration
+│   └── sample_prompt.yaml
+├── prompts.json             # Prompt registry
+├── .mcp.json                # MCP server configuration
+├── AGENTS.md                # Development guidelines
+├── .env                     # Environment variables
+└── .gitignore
+```
+
+The structure and guidelines on `AGENTS.md` ensure every new feature required for the coding assistant is properly tested, evaluated, and that the prompts are versioned.
+
+The `.mcp.json` comes with all the right MCPs set up so you coding assistant becomes an expert in your framework of choice and know where to find new tools.
+
+[`scenarios/`](https://github.com/langwatch/scenario) tests guarantee the agent behaves as expected, which simulates a conversation with the agent making sure it does what expected.
+
+`evaluations/` notebooks holds dataset and notebooks for evaluating pieces of your agent pipeline such as a RAG or classification tasks it must do
+
+Finally, `prompts/` hold all your versioned prompts in yaml format, synced and controlled by `prompts.json`, to allow for playground and team collaboration.
 
 ## Installation
 
@@ -51,25 +72,6 @@ The CLI will guide you through:
 4. **LLM Provider**: OpenAI
 5. **API Keys**: OpenAI and LangWatch
 6. **Project Goal**: What you want to build
-
-### What gets created?
-
-```
-my-agent-project/
-├── app/ (or src/)           # Main application code
-├── prompts/                 # Versioned prompt files
-│   └── sample_prompt.yaml
-├── tests/
-│   ├── evaluations/         # Jupyter notebooks for evaluations
-│   │   └── example_eval.ipynb
-│   └── scenarios/           # End-to-end scenario tests
-│       └── example_scenario.test.{py,ts}
-├── prompts.json             # Prompt registry
-├── .mcp.json                # MCP server configuration
-├── AGENTS.md                # Development guidelines
-├── .env                     # Environment variables
-└── .gitignore
-```
 
 ## Philosophy
 
