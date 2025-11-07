@@ -35,9 +35,9 @@ describe("Full User Flow: TypeScript + Claude + Mastra", () => {
   //   .expectPrompt('What LLM provider')
   //   .input('openai')
   //   .expectPrompt('Enter your OpenAI API key')
-  //   .input('sk-test123')
+  //   .input('sk-test123') << This should use the .env we will provide
   //   .expectPrompt('Enter your LangWatch API key')
-  //   .input('lw_test123')
+  //   .input('lw_test123') << This should use the .env we will provide
   //   .expectPrompt('What do you want to build')
   //   .input('Build an agent that checks the weather in any city')
   //   .expectOutput('Project setup complete')
@@ -61,15 +61,12 @@ describe("Full User Flow: TypeScript + Claude + Mastra", () => {
   // });
   //
   // // Claude builds the agent implementation
+  // THIS SHOULD USE THE .env that was created
   // // (In real test, this would use Claude API or mock the scenario test to pass)
   // await runner.exec(
   //   'claude "Implement a weather agent that can check weather in any city. Make all scenario tests pass."',
   //   {
   //     cwd: 'weather-agent',
-  //     env: {
-  //       MCP_CONFIG: '.mcp.json',
-  //       OPENAI_API_KEY: 'sk-test123'
-  //     },
   //     expectSuccess: true
   //   }
   // );
