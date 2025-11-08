@@ -26,8 +26,9 @@ Best practices:
 - NEVER check for regex or word matches in the agent's response, use judge criteria instead
 - Use functions on the Scenario scripts for things that can be checked deterministically (tool calls, database entries, etc) instead of relying on the judge
 - For the rest, use the judge criteria to check if agent is reaching the desired goal and
-- Try to cover more ground with few scenarios, as they are heavy to run
 - When broken, run on single scenario at a time to debug and iterate faster, not the whole suite
+- Write as few scenarios as possible, try to cover more ground with few scenarios, as they are heavy to run
+- If user made 1 request, just 1 scenario might be enough, run it at the end of the implementation to check if it works
 
 ### 2. Prompt Management
 
@@ -75,8 +76,10 @@ const langwatch = new LangWatch({
 });
 
 const prompt = await langwatch.prompts.get("my_prompt")
-Agent(prompt=prompt?.prompt)
+Agent(prompt=prompt?.prompt || "")
 \`\`\`
+
+Prompt fetching is very reliable, there is no need to try/catch around it.
 
 Explore the prompt management get started and data model docs if you need more advanced usages such as compiled prompts with variables or messages list.
 
@@ -100,7 +103,9 @@ Create evaluations in Jupyter notebooks under \`tests/evaluations/\`:
 
 ### 4. General good practices
 
-ALWAYS use the package manager cli commands to init, add and install new dependencies, DO NOT guess package versions, DO NOT add them to the dependencies file by hand.
+- ALWAYS use the package manager cli commands to init, add and install new dependencies, DO NOT guess package versions, DO NOT add them to the dependencies file by hand.
+- When setting up, remember to load dotenv for the tests so env vars are available
+- Double check the guidelines on AGENTS.md after the end of the implementation.
 
 ---
 `;
