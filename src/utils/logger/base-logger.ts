@@ -56,7 +56,7 @@ export class BaseLogger {
         },
         pino.destination(logPath)
       );
-    } catch (error) {
+    } catch {
       // Silently fail project logging setup - don't break user experience
       // Note: We can't use logger here since we're in the logger setup
     }

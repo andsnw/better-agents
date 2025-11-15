@@ -1,5 +1,3 @@
-import type { Logger as PinoLogger } from 'pino';
-
 /**
  * Context data for debug logging operations.
  * Uses unknown instead of any for type safety while allowing dynamic properties.
