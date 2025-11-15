@@ -35,7 +35,7 @@ export class BaseLogger {
    */
   private async setupProjectLogging(projectPath: string): Promise<void> {
     try {
-      const logDir = path.join(projectPath, ".superagents");
+      const logDir = path.join(projectPath, ".better-agents");
 
       // Create timestamped log file name: debug-YYYY-MM-DD-HH-MM-SS.log
       const now = new Date();
@@ -56,7 +56,7 @@ export class BaseLogger {
         },
         pino.destination(logPath)
       );
-    } catch (error) {
+    } catch {
       // Silently fail project logging setup - don't break user experience
       // Note: We can't use logger here since we're in the logger setup
     }

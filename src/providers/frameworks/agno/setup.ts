@@ -57,7 +57,7 @@ const fetchFile = async ({
     }
     const content = await response.text();
     await fs.writeFile(targetPath, content);
-  } catch (error) {
+  } catch {
     logger.userWarning(`Could not fetch ${url}, using fallback`);
     await fs.writeFile(targetPath, fallback);
   }

@@ -1,5 +1,4 @@
 import { select, input, password, confirm } from "@inquirer/prompts";
-import chalk from "chalk";
 import { spawn } from "child_process";
 import type {
   ProjectConfig,
