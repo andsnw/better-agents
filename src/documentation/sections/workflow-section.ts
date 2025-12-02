@@ -52,7 +52,7 @@ This project follows a standardized structure for production-ready agents:
 
 - ✅ Version control your prompts
 - ✅ Write tests for new features
-- ✅ Use LangWatch MCP to learn best practices
+- ✅ Use LangWatch MCP to learn best practices and to work with Scenario tests and evaluations
 - ✅ Follow the Agent Testing Pyramid
 - ✅ Document your agent's capabilities
 
@@ -70,17 +70,11 @@ This project follows a standardized structure for production-ready agents:
 The LangWatch MCP server provides expert guidance on:
 
 - Prompt management with Prompt CLI
-- Writing Scenario tests
+- Writing and maintaining Scenario tests (use LangWatch MCP to learn)
 - Creating evaluations
 - Best practices for agent development
 
-**How to use it:**
-Simply ask your coding assistant questions like:
-- "How do I use the LangWatch Prompt CLI?"
-- "Show me how to write a Scenario test"
-- "How do I create an evaluation for my RAG system?"
-
-The MCP will provide up-to-date documentation and examples.
+The MCP will provide up-to-date documentation and examples. For Scenario specifically, always navigate its documentation and examples through the LangWatch MCP instead of accessing it directly.
 
 ---
 
