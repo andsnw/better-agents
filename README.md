@@ -2,7 +2,7 @@
 
 Better Agents is a CLI tool and a set of standards for agent building.
 
-It supercharges your coding assistant (Kilocode, Claude Code, Cursor, etc), making it an expert in any agent framework you choose (Agno, Mastra, etc) and all their best practices.
+It supercharges your coding assistant (Kilocode, Claude Code, Cursor, etc), making it an expert in any agent framework you choose (Agno, Mastra, LangGraph etc) and all their best practices.
 
 It's the best way to start any new agent project.
 
