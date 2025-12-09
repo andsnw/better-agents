@@ -54,7 +54,7 @@ const showBanner = (): void => {
 export const initCommand = async (targetPath: string, debug = false): Promise<void> => {
   // Set debug environment variable for logger detection
   if (debug) {
-    process.env.SUPERAGENTS_DEBUG = 'true';
+    process.env.BETTERAGENTS_DEBUG = 'true';
   }
 
   // Create project-specific logger for debug logging
@@ -114,7 +114,7 @@ export const initCommand = async (targetPath: string, debug = false): Promise<vo
       // Build MCP config and set up all editor configurations
       const editorTimer = projectLogger.startTimer('editor-setup');
       const mcpConfig = buildMCPConfig({ config });
-      await setupEditorConfigs({ projectPath: absolutePath, mcpConfig });
+      await setupEditorConfigs({ projectPath: absolutePath, mcpConfig, config });
 
       // Special handling for Antigravity - uses user home config instead of project
       if (config.codingAssistant === 'antigravity') {

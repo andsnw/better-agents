@@ -11,6 +11,9 @@ export type CodingAssistant =
   | 'cursor'
   | 'kilocode'
   | 'antigravity'
+  | 'gemini-cli'
+  | 'crush'
+  | 'qwen-code'
   | 'none';
 export type LLMProvider = 'openai' | 'anthropic' | 'gemini' | 'bedrock' | 'openrouter' | 'grok';
 
